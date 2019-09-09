@@ -24,7 +24,7 @@ npx create-react-app start
 under package.json/ dependencies see installed 
 install like this:
 npm i bootstrap 
-npm node-sass (just change the app.css to app.scss)
+npm i node-sass (just change the app.css to app.scss)
 
 - if the number of watchers is limited error 173
 

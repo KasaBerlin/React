@@ -31,11 +31,25 @@ class Clock extends React.Component {
     super(props);
     this.state = { date: new Date() };
   }
+  // invoked only one time! Initial data loading for the project, when its loaded to the screen
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
+  }
+  // componentWillUnmount() {
+  //   clearInterval(this.timerID);
+  // }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
         <h1>This is really it, I promise.</h1>
-        <h2>For the last time, it is {this.state.toLocaleTimeString()}</h2>
+        <h2>For the last time, it is {this.state.date.toLocaleTimeString()}</h2>
       </React.Fragment>
     );
   }
@@ -61,3 +75,30 @@ ReactDOM.render(<Clock />, document.getElementById("root"));
 //     return <h1>{this.state.name}</h1>;
 //   }
 // }
+
+// props
+
+// const DummyFunction = name => {
+//   console.log(`Whats up, ${name}?`);
+// };
+
+// DummyFunction("Dumbo");
+
+// class DumboComponent extends React.Component {
+//   render() {
+//     return <div>Whats up, {this.props.name}</div>;
+//   }
+// }
+
+const App = () => {
+  return (
+    <React.Fragment>
+      <Clock />
+      <Clock />
+      <Clock />
+      <Clock />
+    </React.Fragment>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));

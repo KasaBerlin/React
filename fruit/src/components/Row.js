@@ -19,14 +19,13 @@ class Row extends React.Component {
   };
 
   render() {
-    // console.log(this.mapFruit());
+    console.log(this.name);
 
     return (
       <React.Fragment>
         {this.state.display ? (
           <p>
-            {this.props.name}
-            color = {this.state.color}
+            {this.props.name}, color = {this.state.color}
             <button
               type="button"
               className="color button"

@@ -1,5 +1,9 @@
 REACT INTRO 
 
+- runs in the client 
+
+- only updates post-components 
+
 - created in 2013 and is maintained and created in Faceboook
 
 - Used to create a single page application
@@ -29,3 +33,11 @@ npm i node-sass (just change the app.css to app.scss)
 - if the number of watchers is limited error 173
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+imr - import react
+imdr - import ReactDom
+imd - import {} from "module"
+
+The difference between these two, is that devDependencies are modules which are only required during development,
+while dependencies are modules which are also required at runtime. To save a dependency as a devDependency on 
+installation we need to do an npm install --save-dev , instead of just an npm install --save

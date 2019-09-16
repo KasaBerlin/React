@@ -41,3 +41,5 @@ imd - import {} from "module"
 The difference between these two, is that devDependencies are modules which are only required during development,
 while dependencies are modules which are also required at runtime. To save a dependency as a devDependency on 
 installation we need to do an npm install --save-dev , instead of just an npm install --save
+
+npm install - installs all needed dependencies from clones projects  

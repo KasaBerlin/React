@@ -21,8 +21,8 @@ class ToDoForm extends React.Component {
         />
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="submit">
-            <i className="fas fa-plus" aria-hidden="true" />
-            Add item
+            <i className="fas fa-plus" aria-hidden="true" /> &nbsp;Add item
+            {/* &nbsp; non breakable space  */}
           </button>
         </div>
       </form>

@@ -23,7 +23,7 @@ REACT INTRO
 - installing 
 
 npm i -g create-react-app
-npx create-react-app start 
+npx create-react-app projectname or directory 
 
 under package.json/ dependencies see installed 
 install like this:
@@ -43,3 +43,6 @@ while dependencies are modules which are also required at runtime. To save a dep
 installation we need to do an npm install --save-dev , instead of just an npm install --save
 
 npm install - installs all needed dependencies from clones projects  
+
+npm i --save react-router-dom 
+npm i --sav-dev @fortawesome/fontawesome-free

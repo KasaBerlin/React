@@ -1,0 +1,15 @@
+// Router
+// Spas
+// React Router Dom
+
+// instead of rerendering it takes us to another component
+
+// npm i --save react-router-dom
+// we us these 3 components
+// <router/>
+// <link/>
+// <route/>
+
+// <BrowserRouter/>
+// <HashRouter/
+// www.example.net/#

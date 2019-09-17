@@ -44,5 +44,34 @@ installation we need to do an npm install --save-dev , instead of just an npm in
 
 npm install - installs all needed dependencies from clones projects  
 
+React Router 
 npm i --save react-router-dom 
 npm i --sav-dev @fortawesome/fontawesome-free
+
+Router
+Spas
+React Router Dom
+
+instead of rerendering it takes us to another component
+
+npm i --save react-router-dom
+we us these 3 components
+<Router/>
+<Link/>
+<Route/>
+import { Route, Switch, Redirect } from "react-router-dom";
+
+<Switch/> - to switch between Routes 
+
+      <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/messages" component={Messages} />
+          <Route path="/about" component={About} />
+          <Redirect to="/" />
+        </Switch>
+
+<BrowserRouter/> - gets rendered to the root in index.js, <App/> in-between
+import { BrowserRouter } from "react-router-dom";
+
+<HashRouter/
+www.example.net/#

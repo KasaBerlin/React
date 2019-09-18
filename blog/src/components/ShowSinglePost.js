@@ -1,39 +1,37 @@
 import React from "react";
 
 class ShowSinglePost extends React.Component {
-  user = React.createRef();
-title = React.createRef();
- comment = React.createRef();
- handleSubmit = e => {
-     e.preventDefault();
-         let newPost = [
-           {
-             user: this.user.current.value.trim(),
-             title: this.title.current.value.trim(),
-             comment: this.comment.current.value.trim()
-           }
-    ]
-    this.props.postList{newPost}
-    e.currentTarget.reset()
-  }
 
-  render() {
+userInput=React.createRef();
+titleInput=React.createRef();
+commentInput=React.createRef();
+
+handleSubmit=(e)=>{
+  e.preventDefault()
+  const user=this.userInput.current.value.trim();
+  const title=this.titleInput.current.value.trim();
+  const comment=this.commentInput.current.value.trim();
+  this.props.addPost(user,title,comment);
+  console.log(title);
+  e.currentTarget.reset(); 
+}
+  
+render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Username:</label>
-          <input type="text" ref={this.user} required></input>
+          <input type="text" ref={this.userInput} required></input>
           <br />
           <label>Title:</label>{" "}
-          <input type="text" ref={this.title} required></input>
+          <input type="text" ref={this.titleInput} required></input>
           <br />
           <label>Content:</label>
-          <textarea rows="5" cols="90" ref={this.comment} required></textarea>
+          <textarea rows="5" cols="90" ref={this.commentInput} required></textarea>
           <br />
           <input
             type="submit"
             value="Create a post"
-            onClick={() => this.getPost()}
           ></input>
           <br />
         </form>

@@ -1,18 +1,15 @@
 import React from "react";
 
+
 class ShowAllPosts extends React.Component {
-  constructor(props) {
-    super(props);
-    state = {
-        postList=[]
-    };
-  }
+
   render() {
     return (
-      <div>
+      <div >
         <h2>Good morning Developers!</h2>
-        <p id="comment-output"></p>
-        <p id="date-output"></p>
+        <p>{this.props.user}</p>
+        <p>{this.props.comment}</p>
+        <p>comment by {this.props.user} {this.props.date}</p>
       </div>
     );
   }

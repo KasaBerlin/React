@@ -31,12 +31,6 @@ class App extends React.Component {
       return state;
     });
   };
-  outputPost = () => {
-    this.state.postList.map((el, i, arr) => {
-      console.log(el, i, arr);
-      return <ShowAllPosts user={el[i]} title={i} comment={arr} />;
-    });
-  };
 
   render() {
     console.log(this.state.postList);
@@ -60,13 +54,9 @@ class App extends React.Component {
             ></Route>
             <Route
               path="/showallpost"
-              component={ShowAllPosts}
-              render={props =>
-                this.state.postList.map((el, i, arr) => {
-                  console.log(el, i, arr);
-                  return <ShowAllPosts user={el[i]} title={i} comment={arr} />;
-                })
-              }
+              render={props => (
+                <ShowAllPosts items={this.state.postList} isAuthed={true} />
+              )}
             ></Route>
             <Redirect to="/" />
           </Switch>

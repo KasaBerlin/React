@@ -1,17 +1,16 @@
 import React from "react";
 
-
 class ShowAllPosts extends React.Component {
+  outputPost = props => {
+    Object.keys(this.props.items).map(uuid => {
+      console.log(this.props.items[uuid].comment);
+      return <div>{this.props.items[uuid].comment}</div>;
+    });
+  };
 
   render() {
-    return (
-      <div >
-        <h2>Good morning Developers!</h2>
-        <p>{this.props.user}</p>
-        <p>{this.props.comment}</p>
-        <p>comment by {this.props.user} {this.props.date}</p>
-      </div>
-    );
+    return <div>{this.outputPost()}</div>;
   }
 }
+
 export default ShowAllPosts;

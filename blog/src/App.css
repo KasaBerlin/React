@@ -31,6 +31,8 @@ h1 {
   font-size: 3em;
   line-height: 200px;
   text-align: center;
+  padding: 20px;
+  box-shadow: 5px 5px 0 rgba(255, 0, 180, 0.5);
 }
 h2 {
   text-align: center;
@@ -40,6 +42,7 @@ h2 {
 form {
   border: 1px solid white;
   padding: 20px;
+  box-shadow: 5px 5px 0 rgba(255, 0, 180, 0.5);
 }
 label {
   width: 60px;
@@ -83,4 +86,29 @@ textarea {
 input[type="submit"]:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+.post{
+  color:deepskyblue;
+  border: 1px yellow solid;
+  margin: 20px 0 20px 0;
+  box-shadow: 5px 5px 0 rgba(255, 0, 180, 0.5);
+}
+.titel{
+  border-bottom: 1px solid white;
+}
+.userdate{
+  border-top: 1px solid white;
+}
+.userdate{
+  height: 25px;
+  line-height: 40px; 
+}
+.titel{
+  height: 25px;
+  line-height: 10px; 
+}
+.titel, .userdate, .comment{
+width: auto;
+font-size:medium;
+padding: 0 20px 0 20px;
 }

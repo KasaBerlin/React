@@ -27,7 +27,7 @@ a:focus {
 h1 {
   text-shadow: 5px 5px 0 rgba(255, 0, 180, 0.5);
   color: yellow;
-  border: 1px solid white;
+  border: 1px solid #fff;
   font-size: 3em;
   line-height: 200px;
   text-align: center;
@@ -40,9 +40,10 @@ h2 {
   color: yellow;
 }
 form {
-  border: 1px solid white;
+  border: 1px solid #fff;
   padding: 20px;
   box-shadow: 5px 5px 0 rgba(255, 0, 180, 0.5);
+  background: wheat;
 }
 label {
   width: 60px;
@@ -50,14 +51,15 @@ label {
   line-height: 1.5em;
   padding-right: 70px;
   padding-left: 5px;
-  color: #fff;
-  text-shadow: 5px 5px 0 rgba(255, 0, 180, 0.5);
+  color: salmon;
 }
 [type="text"],
 textarea {
+  color: turquoise;
+  font-weight: bold;
   background-color: transparent;
   font-size: 18px;
-  width: 85%;
+  width: 98%;
   margin-bottom: 5px;
   line-height: 18px;
   padding: 2px 5px;
@@ -69,46 +71,60 @@ textarea {
 [type="text"] {
   height: 1.5em;
 }
-[type="submit"] {
-  position: relative;
-  font-size: 1em;
-  box-shadow: 0 9px #999;
-  margin-top: 5px;
-  margin-left: 135px;
-  padding: 15px 25px;
-  border: none;
-  border-radius: 15px;
-  background-color: #09f;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
+.read {
+  font-family: 'Pacifico', cursive;
+font-size:1.4em;
+background-color:transparent;
+text-align: center;
+margin: 0 0 0 16px ;
+border:none;
+color: black;
+cursor: pointer;
+outline:none;
 }
-input[type="submit"]:active {
+[type="submit"]{
+  box-shadow: 9px 9px #999;
+  margin: 10px 0 10px 0;
+  border:none;
+  border-radius: 15px;
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+  width: fit-content;
+}
+.fas {
+  text-align: center;
+  padding: 15px 25px;
+  font-size: 3em;
+}
+[type="submit"]:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+
 }
 .post{
-  color:deepskyblue;
+  color:tomato;
   border: 1px yellow solid;
   margin: 20px 0 20px 0;
   box-shadow: 5px 5px 0 rgba(255, 0, 180, 0.5);
+  background: wheat;
 }
-.titel{
+.title{
   border-bottom: 1px solid white;
+  color: rgba(255, 0, 180, 0.5);
+  padding-bottom: 15px;
+
 }
 .userdate{
   border-top: 1px solid white;
+  padding-top: 15px;
 }
-.userdate{
-  height: 25px;
-  line-height: 40px; 
+.comment{
+  color:mediumturquoise;
 }
-.titel{
-  height: 25px;
-  line-height: 10px; 
-}
-.titel, .userdate, .comment{
-width: auto;
+.title, .userdate, .comment{
 font-size:medium;
-padding: 0 20px 0 20px;
+padding-left: 20px;
+padding-right:20px;
+word-wrap: break-word;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class ShowSinglePost extends React.Component {
   userInput = React.createRef();
@@ -12,6 +13,7 @@ class ShowSinglePost extends React.Component {
     const comment = this.commentInput.current.value.trim();
     this.props.addPost(user, title, comment);
     e.currentTarget.reset();
+    this.props.history.push("/showallposts")
   };
 
   render() {
@@ -32,7 +34,7 @@ class ShowSinglePost extends React.Component {
             required
           ></textarea>
           <br />
-          <input type="submit" value="Create a post"></input>
+        <button type="submit"><i  className="fas fa-envelope-open-text"></i></button>
           <br />
         </form>
       </div>
@@ -40,4 +42,4 @@ class ShowSinglePost extends React.Component {
   }
 }
 
-export default ShowSinglePost;
+export default withRouter(ShowSinglePost);

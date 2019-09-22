@@ -6,14 +6,15 @@ import Home from "./components/Home";
 import ShowSinglePost from "./components/ShowSinglePost";
 import ShowAllPosts from "./components/ShowAllPosts";
 
-import { Route, Switch, Redirect, Link } from "react-router-dom";
+import { Route, Switch,  Link} from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      postList: {}
+      postList: {},
     };
+    // this.handleClick = this.handleClick.bind(this)
     this.addPost = this.addPost.bind(this);
   }
 
@@ -24,7 +25,7 @@ class App extends React.Component {
       title: title,
       comment: comment,
       date: new Date().toLocaleString(),
-      done: false
+      showing: false
     };
     this.setState(state => {
       state.postList[post.uuid] = post;
@@ -32,15 +33,25 @@ class App extends React.Component {
     });
   };
 
+emptyPostList = () => Object.keys(this.state.postList).length === 0?
+<h2>No posts yet!</h2>:<ShowAllPosts items={this.state.postList} handleClick={this.handleClick} isAuthed={true} />
+
+handleClick=(uuid)=>{
+  console.log(uuid)
+  this.setState(state=>{
+  state.postList[uuid].showing=!state.postList[uuid].showing
+return state
+  })  
+}
+
   render() {
-    console.log(this.state.postList);
     return (
       <div className="App">
         <header className="App-header">
           <nav>
             <Link to="/">Home</Link>
             <Link to="/create">Create A Post</Link>
-            <Link to="ShowAllPost">Show Current Post</Link>
+            <Link to="/showallposts">Show Current Post</Link>
           </nav>
         </header>
         <div className="content">
@@ -53,12 +64,8 @@ class App extends React.Component {
               )}
             ></Route>
             <Route
-              path="/showallpost"
-              render={props => (
-                <ShowAllPosts items={this.state.postList} isAuthed={true} />
-              )}
-            ></Route>
-            <Redirect to="/" />
+              path="/showallposts"
+              render={props => this.emptyPostList()}></Route>
           </Switch>
         </div>
       </div>

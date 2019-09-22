@@ -75,3 +75,6 @@ import { BrowserRouter } from "react-router-dom";
 
 <HashRouter/
 www.example.net/#
+
+
+YOU CAN NOT USE LIFECYCLE METHODS IN STATELESS FUNCTIONAL COMPONENTS ONLY CLASS COM

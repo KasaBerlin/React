@@ -5,7 +5,6 @@ class ShowSinglePost extends React.Component {
   userInput = React.createRef();
   titleInput = React.createRef();
   commentInput = React.createRef();
-
   handleSubmit = e => {
     e.preventDefault();
     const user = this.userInput.current.value.trim();
@@ -13,7 +12,10 @@ class ShowSinglePost extends React.Component {
     const comment = this.commentInput.current.value.trim();
     this.props.addPost(user, title, comment);
     e.currentTarget.reset();
-    this.props.history.push("/showallposts")
+
+    console.log(this.props);
+    // this.props.history.push("/showallposts");
+    console.log(this.props);
   };
 
   render() {
@@ -34,7 +36,9 @@ class ShowSinglePost extends React.Component {
             required
           ></textarea>
           <br />
-        <button type="submit"><i  className="fas fa-envelope-open-text"></i></button>
+          <button type="submit">
+            <i className="fas fa-envelope-open-text"></i>
+          </button>
           <br />
         </form>
       </div>

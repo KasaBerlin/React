@@ -1,0 +1,51 @@
+.projects {
+  font-family: "Lobster", cursive;
+  padding: 0 50px 50px 50px;
+}
+.hprojects{
+  margin-bottom: 15px;
+}
+h2 {
+  font-size: 166%;
+  padding-bottom: 15px;
+  font-family: "Lobster", cursive;
+  color: gold;
+}
+h3 {
+  font-family: "Quicksand", sans-serif;
+}
+.imagecenter {
+  padding: 15px;
+  text-align: center;
+}
+.projects img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.projects ul {
+  margin: 15px;
+  padding: 15px 15px 0;
+  border-top: 1px solid gold;
+  border-left: 1px solid gold;
+}
+.projects ul:nth-of-type(2) {
+  margin-bottom: 0;
+}
+.projects li {
+  padding-bottom: 5px;
+  font-family: "Quicksand", sans-serif;
+}
+.projects li:nth-child(6) {
+  font-size: 1.5em;
+  padding-top: 15px;
+}
+.projects i {
+  padding: 15px;
+}
+.projects li a{
+  
+}
+.projects li a:hover{
+  padding-bottom: 18px;
+ border-bottom: 1px solid gold;
+}

@@ -12,6 +12,7 @@ class App extends React.Component {
       toDoItems: {}
     };
     // updating -> mutation
+    console.log(props.match.path);
   }
   addToDo = text => {
     const todo = {
@@ -24,12 +25,40 @@ class App extends React.Component {
       return state;
     });
   };
+
+  updateToDoText = (uuid, text) => {
+    this.setState(state => {
+      state.toDoItems[uuid].text = text;
+      return state;
+    });
+  };
+
+  toggleToDoDone = e => {
+    const checkbox = e.target;
+    this.setState(state => {
+      state.toDoItems[checkbox.value].done = checkbox.checked;
+      return state;
+    });
+  };
+
+  removeToDo = uuid => {
+    this.setState(state => {
+      delete state.toDoItems[uuid];
+      return state;
+    });
+  };
+
   render() {
     return (
       <div className="container">
         <Header tagline={getRandomTagline()} />
         <ToDoForm addToDo={this.addToDo} />
-        <ToDoList items={this.state.toDoItems} />
+        <ToDoList
+          items={this.state.toDoItems}
+          updateToDoText={this.updateToDoText}
+          toggleToDoDone={this.toggleToDoDone}
+          removeToDo={this.removeToDo}
+        />
       </div>
     );
   }

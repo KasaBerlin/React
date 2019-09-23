@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Spinner from "./Loader";
+// import Spinner from "./Loader";
+import { Spinner } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends React.Component {
   state = { lat: null, errorMessage: "" };
@@ -24,7 +26,22 @@ class App extends React.Component {
         </div>
       );
     }
-    return <Spinner message="Hold up!" />;
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "90vh"
+        }}
+      >
+        <Spinner
+          style={{ width: "6rem", height: "6rem" }}
+          type="grow"
+          color="warning"
+        />
+      </div>
+    );
   }
   render() {
     return (

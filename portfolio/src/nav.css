@@ -1,0 +1,73 @@
+.full {
+  display: grid;
+  grid-template-rows: repeat (5, 1fr);
+  grid-template-columns: auto-fit 1fr 1fr 1fr 600px;
+  grid-gap: 15px;
+  font-size: 270%;
+  font-family: "Lobster", cursive;
+  text-align: center;
+  height: 100vh;
+}
+.full a:not(.welcome):not(.home) {
+  line-height: 30vh;
+}
+.full > a,
+.iconsnav:not(.welcome) {
+  border-left: 4px black solid;
+  border-top: 4px black solid;
+  color: gold;
+  text-shadow: 2px 2px 2px grey;
+}
+.full a:not(.welcome):hover {
+  color: black;
+  transition: color 1s;
+}
+.full i:hover {
+  color: black;
+  transition: color 1s;
+}
+.responsive {
+  display: none;
+}
+.home {
+  grid-area: 1 / 1 / 4 / 1;
+  line-height: 60vh;
+}
+.rose {
+  grid-area: 1 / 4 / 5 / 5;
+}
+.rose img {
+  width: 80vh;
+}
+.work {
+  grid-area: 2 / 2 / 4 / 4;
+}
+.welcome {
+  grid-area: 1 / 4 / 5 / 6;
+  text-align: right;
+  border-top: 4px black solid;
+  background-image: url(images/final824-roses-drawing.svg);
+  background-size: cover;
+  background-position: left;
+  display: grid;
+  place-items: center;
+  border-left: none !important;
+}
+nav p {
+  border-bottom: 4px black solid;
+  width: 45%;
+  font-size: 1.5em;
+  text-align: center;
+}
+.iconsnav {
+  border: none;
+  font-size: 1em;
+  grid-area: 4 / 1 / 4 / 4;
+  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.iconsnav i {
+  color: gold;
+}

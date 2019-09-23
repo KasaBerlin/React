@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, ButtonGroup } from "reactstrap";
 
 class Row extends React.Component {
   constructor(props) {
@@ -24,20 +25,28 @@ class Row extends React.Component {
     this.state.display ? (
       <p>
         {this.props.name}, color = {this.state.color}
-        <button
-          type="button"
-          className="color button"
-          onClick={() => this.changeColor()}
-        >
-          change color
-        </button>
-        <button
-          type="button"
-          className="delete button"
-          onClick={() => this.deleteRow()}
-        >
-          delete me
-        </button>
+        <Row>
+          <ButtonGroup>
+            <Button
+              style={styleButton}
+              color="warning"
+              type="button"
+              className="color button"
+              onClick={() => this.changeColor()}
+            >
+              change color
+            </Button>
+            <Button
+              style={styleButton}
+              color="info"
+              type="button"
+              className="delete button"
+              onClick={() => this.deleteRow()}
+            >
+              delete me
+            </Button>
+          </ButtonGroup>
+        </Row>
       </p>
     ) : null;
 
@@ -47,3 +56,13 @@ class Row extends React.Component {
 }
 
 export default Row;
+
+const styleButton = {
+  color: "violet",
+  fontSize: "1.3em",
+  fontWeight: "bold"
+};
+// const styleGroup = {
+//   width: "50%",
+//   margin: "0 auto"
+// };

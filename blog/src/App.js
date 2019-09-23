@@ -6,16 +6,14 @@ import Home from "./components/Home";
 import ShowSinglePost from "./components/ShowSinglePost";
 import ShowAllPosts from "./components/ShowAllPosts";
 
-import { Route, Switch,  Link} from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      postList: {},
+      postList: {}
     };
-    // this.handleClick = this.handleClick.bind(this)
-    this.addPost = this.addPost.bind(this);
   }
 
   addPost = (user, title, comment) => {
@@ -33,16 +31,23 @@ class App extends React.Component {
     });
   };
 
-emptyPostList = () => Object.keys(this.state.postList).length === 0?
-<h2>No posts yet!</h2>:<ShowAllPosts items={this.state.postList} handleClick={this.handleClick} isAuthed={true} />
+  emptyPostList = () =>
+    Object.keys(this.state.postList).length === 0 ? (
+      <h2>No posts yet!</h2>
+    ) : (
+      <ShowAllPosts
+        items={this.state.postList}
+        handleClick={this.handleClick}
+        isAuthed={true}
+      />
+    );
 
-handleClick=(uuid)=>{
-  console.log(uuid)
-  this.setState(state=>{
-  state.postList[uuid].showing=!state.postList[uuid].showing
-return state
-  })  
-}
+  handleClick = uuid => {
+    this.setState(state => {
+      state.postList[uuid].showing = !state.postList[uuid].showing;
+      return state;
+    });
+  };
 
   render() {
     return (
@@ -65,9 +70,11 @@ return state
             ></Route>
             <Route
               path="/showallposts"
-              render={props => this.emptyPostList()}></Route>
+              render={props => this.emptyPostList()}
+            ></Route>
           </Switch>
         </div>
+        {console.log(this.props)}
       </div>
     );
   }

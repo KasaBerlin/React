@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Row from "./components/Row";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class List extends React.Component {
   constructor(props) {

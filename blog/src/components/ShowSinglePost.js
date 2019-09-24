@@ -12,10 +12,7 @@ class ShowSinglePost extends React.Component {
     const comment = this.commentInput.current.value.trim();
     this.props.addPost(user, title, comment);
     e.currentTarget.reset();
-
-    console.log(this.props);
-    // this.props.history.push("/showallposts");
-    console.log(this.props);
+    this.props.history.push("/showallposts");
   };
 
   render() {

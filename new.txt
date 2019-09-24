@@ -77,4 +77,15 @@ import { BrowserRouter } from "react-router-dom";
 www.example.net/#
 
 
-YOU CAN NOT USE LIFECYCLE METHODS IN STATELESS FUNCTIONAL COMPONENTS ONLY CLASS COM
+YOU CAN NOT USE LIFECYCLE METHODS IN STATELESS FUNCTIONAL COMPONENTS ONLY CLASS COMPONENTS
+
+local Storage syntax
+
+for (var i = 0; i < localStorage.length; i++){
+    $('body').append(localStorage.getItem(localStorage.key(i)));
+}
+localStorage.setItem("words", JSON.stringify(["Lorem", "Ipsum", "Dolor"]));
+
+var words = JSON.parse(localStorage.getItem("words"));
+words.push("hello");
+localStorage.setItem("words", JSON.stringify(words));

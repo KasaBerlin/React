@@ -72,20 +72,20 @@ textarea {
   height: 1.5em;
 }
 .read {
-  font-family: 'Pacifico', cursive;
-font-size:1.4em;
-background-color:transparent;
-text-align: center;
-margin: 0 0 0 16px ;
-border:none;
-color: black;
-cursor: pointer;
-outline:none;
+  font-family: "Pacifico", cursive;
+  font-size: 1.4em;
+  background-color: transparent;
+  text-align: center;
+  margin: 0 0 0 16px;
+  border: none;
+  color: black;
+  cursor: pointer;
+  outline: none;
 }
-[type="submit"]{
+[type="submit"] {
   box-shadow: 9px 9px #999;
   margin: 10px 0 10px 0;
-  border:none;
+  border: none;
   border-radius: 15px;
   background-color: black;
   color: #fff;
@@ -100,31 +100,41 @@ outline:none;
 [type="submit"]:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
-
 }
-.post{
-  color:tomato;
+.post {
+  color: tomato;
   border: 1px yellow solid;
   margin: 20px 0 20px 0;
   box-shadow: 5px 5px 0 rgba(255, 0, 180, 0.5);
   background: wheat;
 }
-.title{
+.title {
   border-bottom: 1px solid white;
   color: rgba(255, 0, 180, 0.5);
   padding-bottom: 15px;
-
 }
-.userdate{
+.userdate {
   border-top: 1px solid white;
   padding-top: 15px;
 }
-.comment{
-  color:mediumturquoise;
+.comment {
+  color: mediumturquoise;
 }
-.title, .userdate, .comment{
-font-size:medium;
-padding-left: 20px;
-padding-right:20px;
-word-wrap: break-word;
+.title,
+.userdate,
+.comment {
+  font-size: medium;
+  padding-left: 20px;
+  padding-right: 20px;
+  word-wrap: break-word;
+}
+.remove {
+  font-size: medium;
+  color: salmon;
+  text-transform: uppercase;
+  text-decoration-line: overline;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  border-left: 1px solid tomato;
 }

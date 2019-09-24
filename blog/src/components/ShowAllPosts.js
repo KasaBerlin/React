@@ -27,7 +27,13 @@ class ShowAllPosts extends React.Component {
               ) : null}
               <p className="userdate">
                 <span style={usernameStyle}>{this.props.items[uuid].user}</span>{" "}
-                | <span style={dateStyle}>{this.props.items[uuid].date}</span>{" "}
+                <span style={dateStyle}>{this.props.items[uuid].date}</span>{" "}
+                <button
+                  className="remove"
+                  onClick={this.props.removePost.bind(this, uuid)}
+                >
+                  remove
+                </button>
               </p>
             </div>
           );
@@ -55,8 +61,8 @@ const usernameStyle = {
 };
 const dateStyle = {
   color: "rgba(248, 148, 6, 1)",
-  borderBottom: "1px solid rgb(248, 148, 6)",
-  paddingRight: "3px"
+  borderLeft: "1px solid tomato",
+  paddingLeft: "3px"
 };
 
 export default ShowAllPosts;

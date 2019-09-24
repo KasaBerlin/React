@@ -11,10 +11,26 @@ import { Route, Switch, Link } from "react-router-dom";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      postList: {}
-    };
+    this.storageKey = "blogpost-list";
+    const posted = this.getPost(this.storageKey);
+    posted
+      ? (this.state = JSON.parse(posted))
+      : (this.state = {
+          postList: {}
+        });
   }
+  componentDidUpdate() {
+    this.savePost(this.storageKey, JSON.stringify(this.state));
+  }
+
+  savePost(key, value) {
+    localStorage.setItem(key, value);
+  }
+
+  getPost = (key, defaultValue = null) => {
+    const value = localStorage.getItem(key);
+    return value != null ? value : defaultValue;
+  };
 
   addPost = (user, title, comment) => {
     const post = {
@@ -31,6 +47,13 @@ class App extends React.Component {
     });
   };
 
+  removePost = uuid => {
+    this.setState(state => {
+      delete state.postList[uuid];
+      return state;
+    });
+  };
+
   emptyPostList = () =>
     Object.keys(this.state.postList).length === 0 ? (
       <h2>No posts yet!</h2>
@@ -38,6 +61,7 @@ class App extends React.Component {
       <ShowAllPosts
         items={this.state.postList}
         handleClick={this.handleClick}
+        removePost={this.removePost}
         isAuthed={true}
       />
     );
@@ -74,7 +98,6 @@ class App extends React.Component {
             ></Route>
           </Switch>
         </div>
-        {console.log(this.props)}
       </div>
     );
   }

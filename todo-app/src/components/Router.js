@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import App from "./App";
 import Help from "./Help";
 import NotFound from "./NotFound";
@@ -7,13 +7,13 @@ import NotFound from "./NotFound";
 // no third path beacuse it switches only between these two
 
 const Router = () => (
-  <BrowserRouter>
+  <HashRouter basename="/">
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/help" component={Help} />
       <Route component={NotFound} />
     </Switch>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default Router;

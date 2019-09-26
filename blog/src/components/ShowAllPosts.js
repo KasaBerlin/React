@@ -1,47 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class ShowAllPosts extends React.Component {
-  render() {
-    return (
-      <div>
-        <h2>Good morning Developers!</h2>
-        {Object.keys(this.props.items).map(uuid => {
-          uuid = this.props.items[uuid].uuid;
-          return (
-            <div className="post" key={uuid}>
-              <p className="title">
-                {" "}
-                <span style={titleStyle}>
-                  {this.props.items[uuid].title}
-                </span>{" "}
-              </p>
+const ShowAllPosts = props => {
+  return (
+    <div>
+      <h2>Good morning Developers!</h2>
+      {Object.keys(props.items).map(uuid => {
+        uuid = props.items[uuid].uuid;
+        return (
+          <div className="post" key={uuid}>
+            <p className="title">
+              {" "}
+              <span style={titleStyle}>{props.items[uuid].title}</span>{" "}
+            </p>
+            <button
+              className="read"
+              onClick={props.handleClick.bind(this, uuid)}
+            >
+              open...
+            </button>
+            {props.items[uuid].showing ? (
+              <p className="comment">{props.items[uuid].comment}</p>
+            ) : null}
+            <p className="userdate">
+              <span style={usernameStyle}>{props.items[uuid].user}</span>{" "}
+              <span style={dateStyle}>{props.items[uuid].date}</span>{" "}
               <button
-                className="read"
-                onClick={this.props.handleClick.bind(this, uuid)}
+                className="remove"
+                onClick={props.removePost.bind(this, uuid)}
               >
-                open...
+                remove
               </button>
-              {this.props.items[uuid].showing ? (
-                <p className="comment">{this.props.items[uuid].comment}</p>
-              ) : null}
-              <p className="userdate">
-                <span style={usernameStyle}>{this.props.items[uuid].user}</span>{" "}
-                <span style={dateStyle}>{this.props.items[uuid].date}</span>{" "}
-                <button
-                  className="remove"
-                  onClick={this.props.removePost.bind(this, uuid)}
-                >
-                  remove
-                </button>
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 // PropTypes
 ShowAllPosts.propTypes = {

@@ -4,7 +4,7 @@ export class Responsive extends Component {
   render() {
     return (
       <div>
-        <nav classNameName="responsive">
+        <nav className="responsive" id="responsive">
           <li>
             <a href="#home">
               <i className="fas fa-home"></i>

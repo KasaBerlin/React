@@ -11,25 +11,19 @@ function App() {
   return (
     <React.Fragment>
       <div className="App">
-        <div class="up">
-          <a href="#home">
-            {" "}
-            <i class="fas fa-arrow-circle-up"></i>
+        <div className="up" id="up">
+          <a href="#htmlhome">
+            <i className="fas fa-arrow-circle-up"></i>
           </a>
         </div>
         <header className="App-header">
           <Nav></Nav>
-          {/* <Responsive></Responsive> */}
+          <Responsive></Responsive>
         </header>
         <About></About>
         <Projects></Projects>
         <Contact></Contact>
         <Footer></Footer>
-        <div class="after">
-          <a href="#home">
-            <i class="fas fa-arrow-circle-up"></i>
-          </a>
-        </div>
       </div>
     </React.Fragment>
   );

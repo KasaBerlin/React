@@ -35,28 +35,6 @@ export class Nav extends Component {
             </a>
           </div>
         </nav>
-        <nav className="responsive">
-          <li>
-            <a href="#home">
-              <i className="fas fa-home"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#about">
-              <i className="fas fa-book-reader"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#projects">
-              <i className="fas fa-keyboard"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#contact">
-              <i className="fas fa-id-card"></i>
-            </a>
-          </li>
-        </nav>
       </div>
     );
   }

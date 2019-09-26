@@ -49,6 +49,11 @@ export class About extends Component {
             no sea takimata sanctus est Lorem ipsum dolor sit amet.
           </p>
         </section>
+        <div className="after" id="after">
+          <a href="#htmlhome">
+            <i className="fas fa-arrow-circle-up"></i>
+          </a>
+        </div>
       </React.Fragment>
     );
   }

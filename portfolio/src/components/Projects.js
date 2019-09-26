@@ -6,7 +6,7 @@ export class Projects extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="projects" id="projects">
+        <section className="projects slide-in-elliptic-top-fwd" id="projects">
           <h1 className="hprojects">Projects</h1>
           <div className="projectbox"></div>
           <img className="imagecenter" src={alltag} alt="homepage" />
@@ -93,8 +93,7 @@ export class Projects extends Component {
           </ul>
         </section>
         <div className="after">
-          <a href="#home">
-            {" "}
+          <a href="#htmlhome">
             <i className="fas fa-arrow-circle-up"></i>
           </a>
         </div>

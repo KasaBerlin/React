@@ -51,7 +51,7 @@ export class Contact extends Component {
               <input type="submit" value="send"></input>
             </ul>
           </form>
-          <a className="avatar" href="mailto:katrinsalac@gmail.com">
+          <a className="avatar" id="avatar" href="mailto:katrinsalac@gmail.com">
             <h4 className="emailclick">contact me!</h4>
           </a>
         </section>

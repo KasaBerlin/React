@@ -6,7 +6,7 @@
   font-family: "Quicksand", sans-serif;
   padding: 50px;
 }
-form{
+form {
   margin-left: 15px;
 }
 input,
@@ -20,7 +20,7 @@ textarea {
   font-size: 1.3em;
   font-family: "Quicksand", sans-serif;
 }
-textarea{
+textarea {
   height: 20vw;
 }
 .contact ul li:nth-child(1n + 1) {
@@ -29,7 +29,7 @@ textarea{
 .avatar {
   align-self: center;
   margin: 0 auto;
-  background-image: url("images/myAvatar.svg");
+  background-image: url("../images/myAvatar.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,12 +50,15 @@ h4 {
   font-family: "Lobster", cursive;
   line-height: 50px;
 }
-input::placeholder,textarea::placeholder,input[value="send"]{
-color: white;
-font-family: "Quicksand", sans-serif;
-text-align: left;
+input::placeholder,
+textarea::placeholder,
+input[value="send"] {
+  color: white;
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+  text-align: left;
 }
-input[value="send"]:hover{
- color: gold;
- transition: color 1s;
+input[value="send"]:hover {
+  color: gold;
+  transition: color 1s;
 }

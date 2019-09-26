@@ -1,3 +1,117 @@
 .App-header {
   font-size: calc(5px + 2vmin);
 }
+@media screen and (max-width: 768px) {
+  body {
+    overscroll-behavior: auto;
+  }
+  .full {
+    display: none;
+  }
+  .responsive {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    font-size: 3em;
+    text-align: center;
+  }
+  .responsive li {
+    margin: 30px auto;
+  }
+  .responsive li a {
+    border: 1px solid gold;
+    border-radius: 50%;
+    padding: 30px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  }
+  main {
+    border: none;
+  }
+  .up {
+    display: none;
+  }
+  .after {
+    display: inline;
+  }
+  .after i {
+    font-size: 2em;
+    color: gold;
+  }
+  .about,
+  .projects {
+    padding: 0 0 30px 0;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  .projects li:nth-child(6) {
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 30px;
+  }
+  .projects li a {
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    place-content: center;
+  }
+  ul span {
+    display: none;
+  }
+  .contact form {
+    display: none;
+  }
+  .avatar {
+    width: 61vw;
+    height: 61vw;
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+.slide-in-elliptic-top-fwd {
+  -webkit-animation: slide-in-elliptic-top-fwd 0.7s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+}
+@-webkit-keyframes slide-in-elliptic-top-fwd {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
+    opacity: 1;
+  }
+}
+@keyframes slide-in-elliptic-top-fwd {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
+    opacity: 1;
+  }
+}

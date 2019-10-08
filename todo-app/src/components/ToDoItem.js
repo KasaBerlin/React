@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import { updateToDoText, toggleToDo, removeToDo } from "../actions/index";
+import PropTypes from "prop-types";
 
 class ToDoItem extends React.Component {
   handleInputKeyUp(e) {
@@ -9,6 +12,7 @@ class ToDoItem extends React.Component {
   }
   render() {
     const todo = this.props.data;
+
     return (
       <tr className="todo-item" data-id={todo.uuid}>
         <td>
@@ -19,7 +23,9 @@ class ToDoItem extends React.Component {
               id={`todo-done-${todo.uuid}`}
               type="checkbox"
               checked={todo.done}
-              onChange={this.props.toggleToDoDone}
+              onChange={e => {
+                this.props.toggleToDo(todo.uuid);
+              }}
             />
             <label
               className="custom-control-label"
@@ -53,4 +59,22 @@ class ToDoItem extends React.Component {
   }
 }
 
-export default ToDoItem;
+ToDoItem.propTypes = {
+  todo: PropTypes.shape({
+    uuid: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    done: PropTypes.string.isRequired
+  }).isRequired,
+  toggleToDo: PropTypes.func.isRequired,
+  updateToDoText: PropTypes.func.isRequired,
+  removeToDo: PropTypes.func.isRequired
+};
+
+export default connect(
+  state => ({}),
+  {
+    updateToDoText,
+    toggleToDo,
+    removeToDo
+  }
+)(ToDoItem);

@@ -14,6 +14,7 @@ const ShowSinglePost = props => {
     const comment = commentInput.current.value.trim();
     props.addPost(user, title, comment);
     e.currentTarget.reset();
+
     props.history.push("/showallposts");
   };
 

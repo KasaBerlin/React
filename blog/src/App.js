@@ -7,7 +7,7 @@ import ShowSinglePost from "./components/ShowSinglePost";
 import ShowAllPosts from "./components/ShowAllPosts";
 
 import { Route, Switch, Link } from "react-router-dom";
-
+import { withRouter } from "react-router-dom";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -54,9 +54,14 @@ class App extends React.Component {
     });
   };
 
+  addH2AndSort = () =>
+    this.props.history.location.pathname === "/showallposts" ? (
+      <h2 className="hello">Good morning Developers!</h2>
+    ) : null;
+
   emptyPostList = () =>
     Object.keys(this.state.postList).length === 0 ? (
-      <h2>No posts yet!</h2>
+      <h2 className="nopost">No posts yet!</h2>
     ) : (
       <ShowAllPosts
         items={this.state.postList}
@@ -74,6 +79,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(this.props.history.location.pathname);
     return (
       <div className="App">
         <header className="App-header">
@@ -81,6 +87,7 @@ class App extends React.Component {
             <Link to="/">Home</Link>
             <Link to="/create">Create A Post</Link>
             <Link to="/showallposts">Show Current Post</Link>
+            {this.addH2AndSort()}
           </nav>
         </header>
         <div className="content">
@@ -103,4 +110,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

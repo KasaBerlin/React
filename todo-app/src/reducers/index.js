@@ -6,7 +6,7 @@ function filter(state = actions.filters.ALL, action) {
   switch (action.type) {
     case actions.SET_FILTER:
       return action.filter;
-    default:
+    default:cd 
       return state;
   }
 }

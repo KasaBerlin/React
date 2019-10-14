@@ -4,16 +4,16 @@ import uuid from "uuid/v4";
 
 function filter(state = actions.filters.ALL, action) {
   switch (action.type) {
-    case actions.SET_FILTER:
+    case "SET_FILTER":
       return action.filter;
-    default:cd 
+    default:
       return state;
   }
 }
 
 function toDoItems(state = {}, action) {
   switch (action.type) {
-    case actions.ADD_TODO:
+    case "ADD_TODO":
       const id = uuid();
 
       return {
@@ -24,7 +24,7 @@ function toDoItems(state = {}, action) {
           done: false
         }
       };
-    case actions.UPDATE_TODO_TEXT:
+    case "UPDATE_TODO_TEXT":
       return {
         ...state,
         [action.uuid]: {
@@ -32,7 +32,7 @@ function toDoItems(state = {}, action) {
           text: action.text
         }
       };
-    case actions.TOGGLE_TODO:
+    case "TOGGLE_TODO":
       return {
         ...state,
         [action.uuid]: {
@@ -40,7 +40,7 @@ function toDoItems(state = {}, action) {
           done: !state[action.uuid].done
         }
       };
-    case actions.REMOVE_TODO:
+    case "REMOVE_TODO":
       let nextState = { ...state };
       delete nextState[action.uuid];
 

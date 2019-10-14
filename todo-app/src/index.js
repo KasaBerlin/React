@@ -34,4 +34,3 @@ render(
   </Provider>,
   document.querySelector("#root")
 );
-// ReactDOM.render(<Router />, document.getElementById("root"));

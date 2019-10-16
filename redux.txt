@@ -1,0 +1,39 @@
+Redux Middleware is code that lets us intercept redux 
+actions before they reach the reducer
+
+Redux Middleware that lets your action creators return 
+a function called a thunk, instead of an action
++
+it also has access to the Redux store's dispatch function, 
+meaning it can also dispatch other actions
+
+Typically, API calls are invoked inside these thunks and 
+different actions are dispatched depending on these API 
+responses
+
+applyMiddleware is a store enhancer that wraps dispatch
+
+dispatch triggers state change 
+
+The store's reducing function will be called with the current getState() result and the given action synchronously
+
+Async actions are usually asynchronous primitives like Promises, Observables, or thunks
+
+
+import { combineReducers } from "redux";
+
+export default combineReducers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer
+});
+
+Single source of truth
+The state of your whole application is stored in an object tree within a single store.
+
+emit an action, an object describing what happened
+
+for prop values to be evaluated as JavaScript, they must be enclosed in curly brackets, for instance date={Date()}
+
+mapStateToProps: It connects redux state to props of react component.
+
+mapDispatchToProps: It connects redux actions to react props.

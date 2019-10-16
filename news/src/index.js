@@ -7,6 +7,7 @@ import reducer from "./reducers";
 import App from "./components/App";
 const store = createStore(reducer, applyMiddleware(thunk));
 // applyMiddleware is a Redux method
+
 render(
   <Provider store={store}>
     <App />

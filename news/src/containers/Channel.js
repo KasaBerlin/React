@@ -21,6 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(getChannel(ownProps.channelString));
   }
 });
+
 Channel = connect(
   mapStateToProps,
   mapDispatchToProps

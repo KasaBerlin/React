@@ -1,15 +1,12 @@
-import React from "react";
+import React, { createRef } from "react";
 import { connect } from "react-redux";
 import { getSearchResults } from "../actions";
 
 const Search = ({ getResults }) => (
-  <form className="searchBar">
-    <input type="text" name="name" />
-    <button
-      type="submit"
-      value={this.state.value}
-      onClick={e => getResults(undefined, e.target.value)}
-    >
+  const titleInput=createRef();
+  <form className="searchBar" onSubmit={getResults(undefined, e.target.value)}>
+    <input type="text" name="name" ref={titleInput} />
+    <button type="submit">
       <i className="fas fa-search"></i>
     </button>
   </form>

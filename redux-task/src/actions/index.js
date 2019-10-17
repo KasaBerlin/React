@@ -18,6 +18,7 @@ export const receiveResults = () => ({
   type: "RECEIVE_RESULTS",
   json
 });
+
 export function getSearchResults(dispatch, word) {
   dispatch(requestResults());
   fetch(`https://www.googleapis.com/youtube/v3/search?key=${word}`)

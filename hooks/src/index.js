@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 // Hooks are functions that let you "hook intro" React state and lifecycle components,
 // Hooks do not work inside class components - they let you use React without CLASS components
 
-// Classes ar complex.
+// Classes are complex.
 // Classes do not minifiy well.
 // Uniformity - why split between class and functional components?
 // Added complexity of classes - as our application grows, we add lots of code to the class

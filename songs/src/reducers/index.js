@@ -21,3 +21,7 @@ export default combineReducers({
   songs: songsReducer,
   selectedSong: selectedSongReducer
 });
+
+// Redux-Thunk is pretty easy to understand. It is a so-called middleware for the redux store.
+// It looks at every single action being dispatched and if it is a function, it calls the function.
+// There is nothing more to it.

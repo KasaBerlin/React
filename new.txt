@@ -1,25 +1,15 @@
 REACT INTRO 
 
 - runs in the client 
-
 - only updates post-components 
-
 - created in 2013 and is maintained and created in Faceboook
-
 - Used to create a single page application
-
 - Used to generate UI and handle user interaction 
-
 - Makes use of a virtual DOM
-
 - Used JSX (Javascript XML) to render UI's faster and more efficent
-
 - MVC - model-view-controller - React the V (what you see)
-
 - React is a framework not a library!
- 
 - Relies on webpack
-
 - installing 
 
 npm i -g create-react-app
@@ -46,7 +36,7 @@ npm install - installs all needed dependencies from clones projects
 
 React Router 
 npm i --save react-router-dom 
-npm i --sav-dev @fortawesome/fontawesome-free
+npm i --save-dev @fortawesome/fontawesome-free
 
 Router
 Spas
@@ -76,7 +66,6 @@ import { BrowserRouter } from "react-router-dom";
 <HashRouter/
 www.example.net/#
 
-
 YOU CAN NOT USE LIFECYCLE METHODS IN STATELESS FUNCTIONAL COMPONENTS ONLY CLASS COMPONENTS
 
 local Storage syntax
@@ -90,7 +79,8 @@ var words = JSON.parse(localStorage.getItem("words"));
 words.push("hello");
 localStorage.setItem("words", JSON.stringify(words));
 
-git hub pages with react build 
+########################################################################################
+deploy repo with git hub pages when using react 
 
 create repo 
 npm i gh-pages --save-dev
@@ -98,19 +88,30 @@ git init
 git remote add origin https://github.com/pudelgulasch/To-Do-App.git USE HTTP ADDRESS!!!
 
 in package.json 
+under root:
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://pudelgulasch.github.io/portfolioPresent/",
+
 under "scripts" add: 
 "predeploy": "npm run build",
 "deploy": "gh-pages -d build"
+
+The predeploycommand helps bundle the react app whilst the deploy 
+command fires up the bundled file.
 
 in Router js File 
  <HashRouter basename="/"> instead of BrowserRouter
  import { HashRouter, Route, Switch } from "react-router-dom";
 
-npm run deploy first time before:
+npm run predeploy
+npm run deploy 
 git add .
 git commit -m "add"
 git push origin master
 
-and run it always after npm run deploy!!!
+and push it always after npm run deploy!!!
 
-in git hub repo url under settings 
+in git hub repo url under settings, select branch gh-pages
+###########################################################################################

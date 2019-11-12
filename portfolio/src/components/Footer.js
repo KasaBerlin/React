@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export class Footer extends Component {
-  render() {
-    return (
-      <div>
-        <footer>
-          <a className="after" href="#home">
-            {" "}
-            <i className="fas fa-arrow-circle-up"></i>
-          </a>
+const Footer=()=>(
+  <React.Fragment>
+    <footer className="navstyle">
+      <div className="goback left" id="goback">
+      <Link to="/">
+        <i className="fas fa-arrow-circle-left"></i>
+      </Link>
+    </div>
+    <div className="right">
           <a href="https://codepen.io/Pudel/" target="blank">
             <i className="fab fa-codepen"></i>
           </a>
@@ -18,10 +19,9 @@ export class Footer extends Component {
           <a href="https://github.com/pudelgulasch" target="blank">
             <i className="fab fa-github"></i>
           </a>
-        </footer>
       </div>
+      </footer>
+    </React.Fragment>
     );
-  }
-}
 
 export default Footer;

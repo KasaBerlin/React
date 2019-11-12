@@ -1,34 +1,47 @@
-import React, { Component } from "react";
+import React from "react";
+import {Link} from "react-router-dom";
 
-export class Responsive extends Component {
-  render() {
-    return (
-      <div>
-        <nav className="responsive" id="responsive">
+const Responsive =()=>(
+  <React.Fragment className="responsive">
+        <nav className="resFooter">
+        <div className="goback left" id="goback">
+      <i className="fas fa-mobile-alt"></i>
+    </div>
           <li>
-            <a href="#home">
-              <i className="fas fa-home"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#about">
+            <Link to="/aboutme">
               <i className="fas fa-book-reader"></i>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#projects">
-              <i className="fas fa-keyboard"></i>
-            </a>
+            <Link to="/work">
+            <i className="fas fa-hammer"></i>
+            </Link>
           </li>
           <li>
-            <a href="#contact">
-              <i className="fas fa-id-card"></i>
+            <a href="mailto:katrinsalac@gmail.com">
+            <i className="fas fa-envelope"></i>
             </a>
           </li>
         </nav>
+            <p className="resWelcome">
+            Hi, my name is Kasa.<br></br>
+              I`m a web developer <br></br>
+              in Berlin.
+            </p>
+            <div className="resFooter">
+              <div className="bottom">
+          <a href="https://codepen.io/Pudel/" target="blank">
+            <i className="fab fa-codepen"></i>
+          </a>
+          <a href="https://de.linkedin.com/" target="blank">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/pudelgulasch" target="blank">
+            <i className="fab fa-github"></i>
+          </a>
+          </div>
       </div>
+      </React.Fragment>
     );
-  }
-}
 
 export default Responsive;

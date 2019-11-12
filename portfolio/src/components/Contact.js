@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
+import Footer from "./Footer";
 
-export class Contact extends Component {
-  render() {
-    return (
-      <div>
-        <section className="contact" id="contact">
+const Contact =()=> (
+      <React.Fragment>
+        <Footer/>
+        <section className="contact puff-in-center" id="contact">
           <form
             action="https://formspree.io/katrinsalac@gmail.com"
             method="POST"
@@ -52,12 +52,10 @@ export class Contact extends Component {
             </ul>
           </form>
           <a className="avatar" id="avatar" href="mailto:katrinsalac@gmail.com">
-            <h4 className="emailclick">contact me!</h4>
+            <h4 className="emailclick">email me!</h4>
           </a>
         </section>
-      </div>
+      </React.Fragment>
     );
-  }
-}
 
 export default Contact;

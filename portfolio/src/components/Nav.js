@@ -1,18 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export class Nav extends Component {
-  render() {
-    return (
-      <div id="home">
+const Nav=()=>(
+      <section id="home">
         <nav className="full" id="full">
-          <a href="#home" className="home">
-            Home
-          </a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a href="#projects" className="work">
-            Projects
-          </a>
+        <a href="mailto:katrinsalac@gmail.com" className="home">Email Me!</a>
+        <Link to="/aboutme">About me</Link>
+            <Link to="/work" className="work">Projects</Link>
+            <Link to="/contact">Contact</Link>
           <div className="welcome">
             <p>
               Hi, my name is Kasa. <br></br>
@@ -21,9 +16,6 @@ export class Nav extends Component {
             </p>
           </div>
           <div className="iconsnav">
-            <a href="#about">
-              <i className="fas fa-arrow-circle-down arrow"></i>
-            </a>
             <a href="https://codepen.io/Pudel/" target="blank">
               <i className="fab fa-codepen"></i>
             </a>
@@ -35,9 +27,7 @@ export class Nav extends Component {
             </a>
           </div>
         </nav>
-      </div>
+      </section>
     );
-  }
-}
 
 export default Nav;

@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import Footer from "./Footer";
 
-export class About extends Component {
-  render() {
-    return (
+const About =()=>(
       <React.Fragment>
-        <section className="about" id="about">
+        <Footer/>
+        <section className="about puff-in-center" id="about">
+        <div className="center"><div className="divider"></div></div>
           <h1>About me...</h1>
+          <div className="center"><div className="divider"></div></div>
           <div className="date">
             <p>2006</p>
           </div>
@@ -49,14 +51,7 @@ export class About extends Component {
             no sea takimata sanctus est Lorem ipsum dolor sit amet.
           </p>
         </section>
-        <div className="after" id="after">
-          <a href="#htmlhome">
-            <i className="fas fa-arrow-circle-up"></i>
-          </a>
-        </div>
       </React.Fragment>
     );
-  }
-}
 
 export default About;

@@ -4,7 +4,7 @@ import App from "./App";
 import Help from "./Help";
 import NotFound from "./NotFound";
 
-// no third path beacuse it switches only between these two
+// no third path because it switches only between these two
 
 const Router = () => (
   <HashRouter basename="/">

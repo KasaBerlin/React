@@ -1,0 +1,117 @@
+REACT INTRO 
+
+- runs in the client 
+- only updates post-components 
+- created in 2013 and is maintained and created in Faceboook
+- Used to create a single page application
+- Used to generate UI and handle user interaction 
+- Makes use of a virtual DOM
+- Used JSX (Javascript XML) to render UI's faster and more efficent
+- MVC - model-view-controller - React the V (what you see)
+- React is a framework not a library!
+- Relies on webpack
+- installing 
+
+npm i -g create-react-app
+npx create-react-app projectname or directory 
+
+under package.json/ dependencies see installed 
+install like this:
+npm i bootstrap 
+npm i node-sass (just change the app.css to app.scss)
+
+- if the number of watchers is limited error 173
+
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+imr - import react
+imdr - import ReactDom
+imd - import {} from "module"
+
+The difference between these two, is that devDependencies are modules which are only required during development,
+while dependencies are modules which are also required at runtime. To save a dependency as a devDependency on 
+installation we need to do an npm install --save-dev , instead of just an npm install --save
+
+npm install - installs all needed dependencies from clones projects  
+
+React Router 
+npm i --save react-router-dom 
+npm i --save-dev @fortawesome/fontawesome-free
+
+Router
+Spas
+React Router Dom
+
+instead of rerendering it takes us to another component
+
+npm i --save react-router-dom
+we us these 3 components
+<Router/>
+<Link/>
+<Route/>
+import { Route, Switch, Redirect } from "react-router-dom";
+
+<Switch/> - to switch between Routes 
+
+      <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/messages" component={Messages} />
+          <Route path="/about" component={About} />
+          <Redirect to="/" />
+        </Switch>
+
+<BrowserRouter/> - gets rendered to the root in index.js, <App/> in-between
+import { BrowserRouter } from "react-router-dom";
+
+<HashRouter/
+www.example.net/#
+
+YOU CAN NOT USE LIFECYCLE METHODS IN STATELESS FUNCTIONAL COMPONENTS ONLY CLASS COMPONENTS
+
+local Storage syntax
+
+for (var i = 0; i < localStorage.length; i++){
+    $('body').append(localStorage.getItem(localStorage.key(i)));
+}
+localStorage.setItem("words", JSON.stringify(["Lorem", "Ipsum", "Dolor"]));
+
+var words = JSON.parse(localStorage.getItem("words"));
+words.push("hello");
+localStorage.setItem("words", JSON.stringify(words));
+
+########################################################################################
+deploy repo with git hub pages when using react 
+
+create repo 
+npm i gh-pages --save-dev
+git init
+git remote add origin https://github.com/pudelgulasch/To-Do-App.git USE HTTP ADDRESS!!!
+
+in package.json 
+under root:
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://pudelgulasch.github.io/portfolioPresent/",
+
+under "scripts" add: 
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+
+The predeploycommand helps bundle the react app whilst the deploy 
+command fires up the bundled file.
+
+in Router js File 
+ <HashRouter basename="/"> instead of BrowserRouter
+ import { HashRouter, Route, Switch } from "react-router-dom";
+
+npm run predeploy
+npm run deploy 
+git add .
+git commit -m "add"
+git push origin master
+
+and push it always after npm run deploy!!!
+
+in git hub repo url under settings, select branch gh-pages
+###########################################################################################
